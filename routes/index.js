@@ -45,9 +45,13 @@ const {
 //   // const data
 // })
 
-router.post("/register", login);
-router.post("/login", login);
+
+router.post('/register', login);
+router.post('/login', login);
+router.get('/products/:id', getDetailProduct)
+router.get('/products', searchProduct)
 router.get("/orders/:id", getOrders);
 router.get("/products", getAllProduct);
+
 
 module.exports = router;
