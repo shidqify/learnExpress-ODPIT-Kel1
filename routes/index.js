@@ -1,10 +1,23 @@
 const express = require("express");
 const logger = require("../middlewares/utils/logger");
 const router = express.Router();
-const dataDummy = require('../data/data');
-const { login, register, addToCart, getCart } = require('../controller/userController');
-const { getAllProduct, getDetailProduct, searchProduct } = require('../controller/productController');
-const { checkout, payment, getOrders } = require('../controller/transactionController')
+const dataDummy = require("../data/data");
+const {
+  login,
+  register,
+  addToCart,
+  getCart,
+} = require("../controller/userController");
+const {
+  getAllProduct,
+  getDetailProduct,
+  searchProduct,
+} = require("../controller/productController");
+const {
+  checkout,
+  payment,
+  getOrders,
+} = require("../controller/transactionController");
 
 // router.get('/greetings', (req, res) => {
 //   console.log('halo');
@@ -19,7 +32,7 @@ const { checkout, payment, getOrders } = require('../controller/transactionContr
 //     name: username,
 //     password,
 //   }
-  
+
 //   logger.info('succes login');
 //   res.status(202).json({
 //     message: "berhasil login",
@@ -32,9 +45,13 @@ const { checkout, payment, getOrders } = require('../controller/transactionContr
 //   // const data
 // })
 
+
 router.post('/register', login);
 router.post('/login', login);
 router.get('/products/:id', getDetailProduct)
 router.get('/products', searchProduct)
+router.get("/orders/:id", getOrders);
+router.get("/products", getAllProduct);
+
 
 module.exports = router;
