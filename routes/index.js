@@ -34,5 +34,7 @@ const { checkout, payment, getOrders } = require('../controller/transactionContr
 
 router.post('/register', login);
 router.post('/login', login);
+router.get('/products/:id', getDetailProduct)
+router.get('/products', searchProduct)
 
 module.exports = router;
