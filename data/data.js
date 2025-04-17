@@ -2,34 +2,41 @@
 module.exports.product = [{
   "id": 1,
   "product": "Roasted Vegetable Medley",
-  "descProduct": "A mix of frozen roasted vegetables for an easy side dish."
+  "descProduct": "A mix of frozen roasted vegetables for an easy side dish.",
+  "price": 10000
 }, {
   "id": 2,
   "product": "Watercolor Paint Set",
-  "descProduct": "Vibrant watercolor paints that come with brushes and palettes."
+  "descProduct": "Vibrant watercolor paints that come with brushes and palettes.",
+  "price": 20000
 }, {
   "id": 3,
   "product": "Herb Garlic Butter",
-  "descProduct": "A flavorful garlic butter blend, perfect for cooking or baking."
+  "descProduct": "A flavorful garlic butter blend, perfect for cooking or baking.",
+  "price": 15000
 }, {
   "id": 4,
   "product": "Cabbage",
-  "descProduct": "Fresh green cabbage, great for salads and slaws."
+  "descProduct": "Fresh green cabbage, great for salads and slaws.",
+  "price": 5000
 }, {
   "id": 5,
   "product": "Peanut Butter Granola",
-  "descProduct": "Crunchy granola full of peanut butter flavor and oats."
+  "descProduct": "Crunchy granola full of peanut butter flavor and oats.",
+  "price": 12000
 }]
 
 module.exports.user = [
   {
       "id": 1,
       "username": "admin",
-      "password": "admin"
+      "password": "admin",
+      "token": "ini_token_user1"
   }, {
       "id": 2,
       "username": "user",
-      "password": "user"
+      "password": "user",
+      "token": "ini_token_user2"
   }
 ]
 

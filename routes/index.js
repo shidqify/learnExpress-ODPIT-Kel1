@@ -1,23 +1,12 @@
 const express = require("express");
 const logger = require("../middlewares/utils/logger");
 const router = express.Router();
-const dataDummy = require("../data/data");
-const {
-  login,
-  register,
-  addToCart,
-  getCart,
-} = require("../controller/userController");
-const {
-  getAllProduct,
-  getDetailProduct,
-  searchProduct,
-} = require("../controller/productController");
-const {
-  checkout,
-  payment,
-  getOrders,
-} = require("../controller/transactionController");
+const cartRouter = require("./cartRoutes");
+const dataDummy = require('../data/data');
+const { login, register, addToCart, getCart } = require('../controller/userController');
+const { getAllProduct, getDetailProduct, searchProduct } = require('../controller/productController');
+const { checkout, payment, getOrders } = require('../controller/transactionController')
+
 
 // router.get('/greetings', (req, res) => {
 //   console.log('halo');
@@ -52,6 +41,6 @@ router.get('/products/:id', getDetailProduct)
 router.get('/products', searchProduct)
 router.get("/orders/:id", getOrders);
 router.get("/products", getAllProduct);
-
+router.use('/cart', cartRouter);
 
 module.exports = router;
