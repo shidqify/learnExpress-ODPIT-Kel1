@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("../middlewares/utils/logger");
 const router = express.Router();
+const cartRouter = require("./cartRoutes");
 const dataDummy = require('../data/data');
 const { login, register, addToCart, getCart } = require('../controller/userController');
 const { getAllProduct, getDetailProduct, searchProduct } = require('../controller/productController');
@@ -34,5 +35,7 @@ const { checkout, payment, getOrders } = require('../controller/transactionContr
 
 router.post('/register', login);
 router.post('/login', login);
+
+router.use('/cart', cartRouter);
 
 module.exports = router;
